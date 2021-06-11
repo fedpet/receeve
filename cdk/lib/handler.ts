@@ -19,7 +19,7 @@ const storage: MailgunEventRepository = new DynamoMailgunEventRepository(new Doc
 const notifications: NotificationsService = new SNSNotificationsService(new AWS.SNS(), notificationTopic)
 const service = new MailgunWebhookService(signingKey, storage, notifications)
 
-export default async function handler(event: APIGatewayProxyEventV2): Promise<APIGatewayProxyResultV2> {
+export async function handler(event: APIGatewayProxyEventV2): Promise<APIGatewayProxyResultV2> {
     if (!event.body) {
         return {
             statusCode: 406

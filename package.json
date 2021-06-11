@@ -4,7 +4,7 @@
   "description": "",
   "main": "handler.ts",
   "scripts": {
-    "test": "jest",
+    "test": "jest mailgun-webhooks-service.spec.ts",
     "build": "npx tsc"
   },
   "author": "",
